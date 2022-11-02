@@ -1,12 +1,15 @@
 # mapsindoors-integrationapi
 This library adds some functionality on top of the MapsIndoors Integration API.
 
-Swagger docs are maintained by MapsPeople, https://integration.mapsindoors.com/doc/index.html
-Documentation including descriptions found here. https://docs.mapsindoors.com/api/
+Swagger docs are maintained by MapsPeople
+https://integration.mapsindoors.com/doc/index.html
 
-requirements.txt includes minimum libraries required + packages used for jupyterlab.
+Documentation including descriptions also maintained by MapsPeople
+https://docs.mapsindoors.com/api/
 
-absolute minimum packages without jupyter lab include
 
+minimum packages without jupyter lab include:
 pyproj
 shapely
+
+requirements.txt includes minimum libraries required + packages used for jupyterlab.
