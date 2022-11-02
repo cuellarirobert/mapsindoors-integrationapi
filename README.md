@@ -5,3 +5,8 @@ Swagger docs are maintained by MapsPeople, https://integration.mapsindoors.com/d
 Documentation including descriptions found here. https://docs.mapsindoors.com/api/
 
 requirements.txt includes minimum libraries required + packages used for jupyterlab.
+
+absolute minimum packages without jupyter lab include
+
+pyproj
+shapely
