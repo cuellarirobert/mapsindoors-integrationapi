@@ -1,6 +1,5 @@
 from mapsindoors.geodata import *
 from mapsindoors.integration_api_instance import *
-from mapsindoors.auth_client import *
 from mapsindoors.url_classes import *
 import requests
 import json
@@ -13,30 +12,26 @@ import re
 import os
 
 
-# api = api_instance('your user name', 'YOURPASSWORD', 'api key')
-
 
 class GeoFunctions:
-    def __init__(self, username, password, api_key):
+    def __init__(self, api_key):
         """
-        instance: gets authorization
         geodata_response: list of dictionaries of all geodata
         location_types : list of dictionaries of location types
         categories: list of dictionaries of categories
-        app_user_roles: list of dictionaries of app_user_roles. AppUserRoles class can be used for dot notation.  requires import of app_user_roles module.
         url makes available all url's from the url_classes file.
-        access_token is the OAuthToken bearer token
         geodata_objects is the (list of objects) dot notation form of the geodata response.
+        
+        to perform write functionality you'll need to generate an OAuth token from the OAuth_token module. This requires a MapsIndoors User/Pass.
         """
 
-        self.instance = ApiInstance(username, password, api_key)
+        self.instance = ApiInstance(api_key)
         self.api_key = api_key
         self.geodata_response = self.instance.get_raw_geodata()
         self.location_types = self.instance.get_location_types()
         self.categories = self.instance.get_categories()
         self.app_user_roles = self.instance.get_app_user_roles()
         self.url = Urls(api_key)
-        self.access_token = self.instance.access_token
         geodata_objects = []
         for item in self.geodata_response:
             geodata_objects.append(Geodata(item))
