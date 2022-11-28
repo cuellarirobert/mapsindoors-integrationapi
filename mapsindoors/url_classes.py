@@ -8,6 +8,7 @@ class Urls:
         self.dataset = "dataset"
         self.geodata = "geodata"
         self.display_types = "displaytypes"
+        self.place2dmodel = "place2dmodel"
         
     def base_url(self):
         return self.base_url
@@ -26,6 +27,9 @@ class Urls:
     
     def geodata_url(self):
         return self.base_url + self.geodata
+    
+    def place2dmodel(self):
+        return self.base_url + self.geodata + '/place2dmodel'
     
   
     
